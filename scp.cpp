@@ -105,4 +105,4 @@ int main(){
 	return 0;
 	}
 
-//kak aselii ini susahh 
+//kak aselii ini susahh bangetttt wkwk
