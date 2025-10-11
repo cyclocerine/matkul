@@ -18,7 +18,7 @@ void menu() {
 
         if (pilihan == 1) {
             int n;
-            cout << "\n--- MENU 1: Angka 1 ---" << endl;
+            cout << "\n=== MENU 1: Angka 1 ===" << endl;
             cout << "Minta input angka n: ";
             cin >> n;
             
@@ -42,7 +42,7 @@ void menu() {
             
         } else if (pilihan == 2) {
             int n;
-            cout << "\n--- MENU 2: Bintang Garis ---" << endl;
+            cout << "\n=== MENU 2: Bintang Garis ===" << endl;
             cout << "Minta input angka n: "; 
             cin >> n;
             
