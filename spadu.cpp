@@ -24,16 +24,16 @@ int main() {
     const string VALID_PASS = "admin123";
 
     string nim, pass;
-    int attempts = 0;
-    const int MAX_ATTEMPTS = 3;
+    int percobaan = 0;
+    const int MAX_percobaan = 3;
 
     cout << fixed << setprecision(2);
     garis();
-    cout << setw(36) << right << "SELAMAT DATANG DI SPADU" << '\n';
+    cout << setw(36) << right << "SELAMAT DATANG DI xpad" << '\n';
     garis();
     cout << "\n-- Silakan Login --\n";
 
-    while (attempts < MAX_ATTEMPTS) {
+    while (percobaan < MAX_percobaan) {
         cout << "NIM    : "; cin >> nim;
         cout << "Password: "; cin >> pass;
 
@@ -41,9 +41,9 @@ int main() {
             cout << "\nLogin sukses. Selamat datang, mahasiswa NIM " << nim << "!\n\n";
             break;
         } else {
-            attempts++;
-            cout << "NIM atau Password salah. Kesempatan tersisa: " << (MAX_ATTEMPTS - attempts) << '\n';
-            if (attempts >= MAX_ATTEMPTS) {
+            percobaan++;
+            cout << "NIM atau Password salah. Kesempatan tersisa: " << (MAX_percobaan - percobaan) << '\n';
+            if (percobaan >= MAX_percobaan) {
                 cout << "\nKesempatan habis. Anda akan keluar dari sistem.\n";
                 return 0;
             }
