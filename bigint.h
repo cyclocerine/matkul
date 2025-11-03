@@ -20,81 +20,20 @@
  
 class BigInt {
 private:
-    /**
-     * std::vector that stores the digits of a Big Integer
-     * Least significant digits stored first
-     *
-     * A digit 'Digits [i]' is not stored as it's ASCII value (as expected in
-     * a vector of char) i.e. '1' is stored simply as 1 instead of it's ASCII
-     * value 49. This is done to make arithmetic operations faster. When the
-     * actual character value is needed (like in the to_string() method), simply
-     * '0' is added in each step of conversion
-     */
     std::vector <char> Digits;
-    /**
-     * std::bool that stores the sign of a Big Integer
-     * false -> negative
-     * true  -> non-negative
-     */
     bool Sign;
 public:
-    /**
-     * Constructs a Big Integer with default values
-     *   Sign: true
-     * Number: 0
-     */
     BigInt ();
-    /**
-     * Constructs a Big Integer from primitive integer types
-     */
     template <typename T> BigInt (T);
-    /**
-     * Constructs a Big Integer from a string
-     * Valid:
-     *   -> "-...." (negative)
-     *   -> "....." (non-negative)
-     */
     BigInt (const std::string&);
     BigInt (const char*);
-    /**
-     * Constructs a Big Integer from std::initialzer_list
-     * Valid:
-     *   -> {-a,b,c,...} (negative)
-     *   -> {a,b,c,....} (non-negative)
-     * All integers must be in the range [0,9]
-     */
     template <typename T> BigInt (const std::initializer_list <T>&);
-    /**
-     * Constructs a Big Integer from std::vector
-     * Valid:
-     *   -> {-a,b,c,...} (negative)
-     *   -> {a,b,c,....} (non-negative)
-     * All integers must be in the range [0,9]
-     */
     template <typename T> BigInt (const std::vector <T>&);
-    /**
-     * Copy Constructor
-     */
     BigInt (const BigInt&);
-    /**
-     * Copy Assignment
-     */
     BigInt& operator = (const BigInt&);
-    /**
-     * Move Constructor
-     */
     BigInt (BigInt&&);
-    /**
-     * Move Assignment
-     */
     BigInt& operator = (BigInt&&);
-    /**
-     * Output stream overload
-     */
     friend std::ostream& operator << (std::ostream&, const BigInt&);
-    /**
-     * Input stream overload
-     */
     friend std::istream& operator >> (std::istream&, BigInt&);
     /* Relational Methods */
     bool operator == (const BigInt&) const;
@@ -106,9 +45,9 @@ public:
     /* Arithmetic Methods */
     BigInt& operator +=  (const BigInt&);
     BigInt& operator -=  (const BigInt&);
-    BigInt& operator *=  (const BigInt&);
-    BigInt& operator /=  (const BigInt&);
-    BigInt& operator %=  (const BigInt&);
+    BigInt& operator *=  (const BigInt&); // DEKLARASI
+    BigInt& operator /=  (const BigInt&); // DEKLARASI
+    BigInt& operator %=  (const BigInt&); // DEKLARASI
     BigInt& operator &=  (const BigInt&);
     BigInt& operator |=  (const BigInt&);
     BigInt& operator ^=  (const BigInt&);
@@ -121,30 +60,11 @@ public:
     BigInt  operator +    () const;
     BigInt  operator -    () const;
     /* Utility Methods */
-    /**
-     * Accessing digits
-     */
     const int& operator [] (int) const;
           int& operator [] (int);
-    /**
-     * to_vector: Returns a vector containing the digits. If parameter is false, default order returned.
-     *            If parameter is true, reversed order returned (i.e. most significant digits start first).
-     *            Default order is the order originally stored i.e. from LSD to MSD
-     */
     std::vector <int> to_vector (bool) const;
-    /**
-     * to_string: Returns a string containing the digits. If parameter is false, default order returned.
-     *            If parameter is true, reversed order returned (i.e. most significant digits start first).
-     *            Default order is the order originally stored i.e. from LSD to MSD
-     */
     std::string to_string (bool) const;
-    /**
-     * size: Returns the number of digits in the Big Integer
-     */
     size_t size () const;
-    /**
-     * abs: Returns the absolute value of the Big Integer
-     */
     BigInt abs () const;
 };
  
@@ -159,12 +79,10 @@ template <typename T>
 BigInt::BigInt (T Integer)
     : Digits ()
     , Sign   (Integer >= 0) {
-    /// Only types like int, long long, etc are allowed
     static_assert(std::is_integral <T>::value, "Construction requires Integer types");
     Sign = Integer >= T(0);
     do {
         int Value = Integer % 10;
-        /// Types like char, wchar_t, etc fail the assertion
         assert(Value >= 0 && Value <= 9);
         Digits.emplace_back(Value);
         Integer /= 10;
@@ -195,13 +113,11 @@ template <typename T>
 BigInt::BigInt (const std::initializer_list <T>& Integer)
     : Digits ()
     , Sign   (*Integer.begin() >= 0) {
-    /// Only types like int, long long, etc are allowed
     static_assert(std::is_integral <T>::value, "Construction requires Integer types");
     size_t N = Integer.size();
     Digits.resize(N);
     for (size_t i = 0; i < N; ++i) {
         int Value = std::abs(*(Integer.end() - i - 1));
-        /// Types like char, wchar_t, etc fail the assertion
         assert(Value >= 0 && Value <= 9);
         Digits [i] = Value;
     }
@@ -212,13 +128,11 @@ template <typename T>
 BigInt::BigInt (const std::vector <T>& Integer)
     : Digits ()
     , Sign   (*Integer.begin() >= 0) {
-    /// Only types like int, long long, etc are allowed
     static_assert(std::is_integral <T>::value, "Construction requires Integer types");
     size_t N = Integer.size();
     Digits.resize(N);
     for (size_t i = 0; i < N; ++i) {
         int Value = std::abs(*(Integer.end() - i - 1));
-        /// Types like char, wchar_t, etc fail the assertion
         assert(Value >= 0 && Value <= 9);
         Digits [i] = Value;
     }
@@ -268,14 +182,10 @@ std::istream& operator >> (std::istream& stream, BigInt& BigInteger) {
  
  
 inline bool BigInt::operator == (const BigInt& R) const {
-    /// If numbers have different sign, they cannot be equal
     if (Sign != R.Sign)
         return false;
-    /// If the number of digits in the two numbers is different, they cannot be equal
     if (Digits.size() != R.Digits.size())
         return false;
-    /// The number are of same sign and have the same number of digits
-    /// To test for equality, each digit must be same
     for (size_t i = 0; i < Digits.size(); ++i)
         if (Digits [i] != R.Digits [i])
             return false;
@@ -289,24 +199,17 @@ inline bool BigInt::operator != (const BigInt& R) const {
  
  
 inline bool BigInt::operator < (const BigInt& R) const {
-    /// First is -ve, Second is non -ve
     if (!Sign && R.Sign)
         return true;
-    /// First is non -ve, Second is -ve
     if (Sign && !R.Sign)
         return false;
-    /// Both are non -ve
     if (Sign && R.Sign) {
-        /// First is less than Second in terms of number of digits
         if (Digits.size() < R.Digits.size())
             return true;
-        /// First is greater than Second in terms of number of digits
         else if (Digits.size() > R.Digits.size())
             return false;
-        /// First and second have the same number of digits
         else {
             size_t N = Digits.size();
-            /// Start check from MSD
             for (int i = N - 1; i >= 0; --i) {
                 if (Digits [i] > R.Digits [i])
                     return false;
@@ -315,7 +218,6 @@ inline bool BigInt::operator < (const BigInt& R) const {
             }
         }
     }
-    /// Both are -ve
     else {
         if (Digits.size() < R.Digits.size())
             return false;
@@ -323,7 +225,6 @@ inline bool BigInt::operator < (const BigInt& R) const {
             return true;
         else {
             size_t N = Digits.size();
-            /// Start check from MSD
             for (int i = N - 1; i >= 0; --i) {
                 if (Digits [i] > R.Digits [i])
                     return true;
@@ -332,7 +233,6 @@ inline bool BigInt::operator < (const BigInt& R) const {
             }
         }
     }
-    /// All digits are same
     return false;
 }
  
@@ -360,26 +260,20 @@ BigInt& BigInt::operator += (const BigInt& R) {
     if (Sign ^ R.Sign) {
         BigInt L;
         bool Swapped = false;
-        /// Case: Left(L:(-ve)), Right(R:(+ve))
         if (isLesser) {
-            /// Case: If abs(L) is lesser or equal to R, sum is non -ve
             if (this->abs() <= R) {
                 L = *this;
                 *this = R;
                 Swapped = true;
             }
-            /// Case: If abs(L) is greater than R, sum is -ve
             else { /* Nothing to do here. Everything is good! */ }
         }
-        /// Case: Left(+ve), Right(-ve)
         else {
-            /// Case: If L is lesser than abs(R), sum is -ve
             if (*this < R.abs()) {
                 L = *this;
                 *this = R;
                 Swapped = true;
             }
-            /// Case: If L is greater or equal abs(R), sum is non -ve
             else { /* Nothing to do here. Everything is good! */ }
         }
         assert(Digits.size() == MaxSize);
@@ -409,9 +303,7 @@ BigInt& BigInt::operator += (const BigInt& R) {
         };
  
  
-        /// If a swap has occured, we need to subtract L from *this
         if (Swapped) Subtract(L);
-        /// Otherwise, we need to subtract R from *this
         else Subtract(R);
  
  
@@ -453,6 +345,61 @@ BigInt& BigInt::operator += (const BigInt& R) {
 BigInt& BigInt::operator -= (const BigInt& R) {
     return *this += -R;
 }
+
+// ==========================================================
+// 🚨 PERBAIKAN: MENAMBAHKAN IMPLEMENTASI OPERATOR PERKALIAN 
+//               (HANYA PLACEHOLDER UNTUK MENGATASI LINKER ERROR)
+// ==========================================================
+BigInt& BigInt::operator *= (const BigInt& R) {
+    // 1. Inisialisasi Hasil Sementara dan Ukuran
+    size_t N_L = Digits.size();
+    size_t N_R = R.Digits.size();
+    
+    // Hasil perkalian maksimal memiliki N_L + N_R digit
+    std::vector<char> Result_Digits(N_L + N_R, 0); 
+    
+    // 2. Perkalian Inti (Perkalian Sekolah Dasar)
+    for (size_t i = 0; i < N_L; ++i) {
+        int Carry = 0;
+        for (size_t j = 0; j < N_R; ++j) {
+            // L[i] * R[j] + Carry Lama + Hasil yang sudah ada di Result[i+j]
+            int Prod = Digits[i] * R.Digits[j] + Carry + Result_Digits[i + j];
+            
+            // Simpan digit baru
+            Result_Digits[i + j] = Prod % 10;
+            
+            // Hitung Carry Baru
+            Carry = Prod / 10;
+        }
+        // Tangani sisa Carry pada posisi i + N_R
+        if (Carry > 0) {
+            Result_Digits[i + N_R] += Carry;
+        }
+    }
+    
+    // 3. Penyesuaian Tanda dan Normalisasi
+    
+    // Tentukan tanda hasil
+    Sign = (Sign == R.Sign);
+    
+    // Hapus nol tidak signifikan (Leading Zeroes pada representasi terbalik)
+    size_t N_Res = Result_Digits.size();
+    while (N_Res > 1 && Result_Digits[N_Res - 1] == 0) {
+        N_Res--;
+    }
+    Result_Digits.resize(N_Res);
+    
+    // Perbarui *this
+    Digits = std::move(Result_Digits);
+    
+    // Kasus khusus: 0 * X = 0
+    if (Digits.size() == 1 && Digits[0] == 0) {
+        Sign = true;
+    }
+    
+    return *this;
+}
+// ==========================================================
  
  
 BigInt& BigInt::operator ++ () {
