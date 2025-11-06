@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+
+long long factorial(int num) {
+    long long result = 1;
+    for (int i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
 int main() {
     int n, t, k, i;
     long long hasil = 1, pembagi = 1;
@@ -10,21 +19,19 @@ int main() {
     cout << "input total k (t): ";
     cin >> t;
 
-    for (i = 1; i <= n; i++) {
-        hasil *= i;
-    }
+    hasil = factorial(n);
+    
 
     cout << "Masukkan nilai k :\n";
     for (i = 1; i <= t; i++) {
         cout << "k" << i << ": ";
         cin >> k;
-        for (int j = 1; j <= k; j++) {
-            pembagi *= j;
+        pembagi *= factorial(k);
+            cout << "pembagi " << pembagi << endl;
         }
-    }
 
     long long permutasi = hasil / pembagi;
     cout << "hasil " << permutasi << endl;
 
     return 0;
-}
+}//MISSISIPI
