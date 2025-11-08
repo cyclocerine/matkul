@@ -44,9 +44,9 @@ float volumeKerucut(float radius, float tinggi) {
 float volumeBola(float radius) {
     return (4.0/3.0) * M_PI * radius * radius * radius;
 }
-float volumePrismasegitiga(float luasAlas, float tinggi) {
+float volumePrisma(float luasAlas, float tinggi) {
     return luasAlas * tinggi;
 }
-float volumeLimassegitiga(float luasAlas, float tinggi) {
+float volumeLimas(float luasAlas, float tinggi) {
     return (1.0/3.0) * luasAlas * tinggi;
 }

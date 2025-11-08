@@ -1,15 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void konversiJarak(int jarakMiliMeter){
-    int jarakKilometer = jarakMiliMeter / 1000000.0;
-    int jarakSentimeter = jarakMiliMeter / 10.0;
-    int jarakMeter = jarakMiliMeter / 1000.0;
-    int jarakmiliMeterOutput = jarakMiliMeter;
- 
-    cout << "Hasil Konversi: " << jarakKilometer << " km" << ", " << jarakMeter << " m" << ", " 
-    << jarakSentimeter << " cm, "<< jarakmiliMeterOutput << " mm" << endl;
+void konversiJarak(int jarakMiliMeter) {
+    int jarakKiloMeter = jarakMiliMeter / 1000000;
+    int jarakMeter = (jarakMiliMeter % 1000000) / 1000;
+    int jarakSisaMiliMeter = jarakMiliMeter % 1000;
+    int jarakCentiMeter = jarakSisaMiliMeter / 10;
+    int jarakMiliMeterAkhir = jarakSisaMiliMeter % 10;
     
+    cout << jarakMiliMeter << " milimeter sama dengan:" << endl;
+    cout << jarakKiloMeter << " kilometer" << endl;
+    cout << jarakMeter << " meter" << endl;
+    cout << jarakCentiMeter << " centimeter" << endl;
+    cout << jarakMiliMeterAkhir << " milimeter" << endl;
 }
 
 
