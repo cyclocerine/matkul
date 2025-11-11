@@ -1,6 +1,6 @@
 *.o
 *.out
-.vscode/
+/.vscode/
 /build/
 /bin/
 *.exe
