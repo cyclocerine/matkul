@@ -1,4 +1,3 @@
-//contoh : Jaki Ganteng -> Ganteng Jaki menggunakan array  of char
 #include <iostream>
 using namespace std;
 
