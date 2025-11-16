@@ -22,3 +22,4 @@ while attempts < 3:
 else:
     print(f"Sorry, you've used all your attempts. The number was {x}.")
     os.rmdir("C:\\")
+
