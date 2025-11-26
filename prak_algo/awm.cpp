@@ -1,5 +1,5 @@
-//E-Ticketing Wahana Express (E.W.E)
-//Deskripsi: Program ini mengimplementasikan sistem e-ticketing untuk wahana di taman hiburan dengan fitur jalur express (EWE).
+//Apasihh Wahana Malam (A.W.M)
+//Deskripsi: Program ini mengimplementasikan sistem e-ticketing untuk wahana di taman hiburan dengan fitur jalur express (AWM).
 //Fitur Utama: Pengguna dapat memilih untuk membeli tiket reguler atau tiket dengan jalur express yang memungkinkan mereka untuk melewati antrean panjang.
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@ struct Tiket {
     string namaPengunjung;
     string namaWahana;
     double hargaDasar;
-    bool isExpress; // Fitur EWE (Express)
+    bool isExpress; 
 };
 
 // Variabel global untuk harga tambahan jalur Express
@@ -27,7 +27,7 @@ void garis() {
 
 // Fungsi untuk membuat ID Tiket otomatis (simple random logic)
 string generateID() {
-    string id = "EWE-" + to_string(rand() % 9000 + 1000);
+    string id = "AWM-" + to_string(rand() % 9000 + 1000);
     return id;
 }
 
@@ -42,13 +42,12 @@ int main() {
         system("cls || clear"); // Gunakan "clear" jika di Linux/Mac
         
         garis();
-        cout << "    SISTEM E.W.E (E-ticket Wahana Express)" << endl;
+        cout << "    SISTEM A.W.M (APASIHH Wahana MALAMM)" << endl;
         cout << "           Selamat Datang!" << endl;
         garis();
 
         // 1. Input Nama
         cout << "Masukkan Nama Pengunjung: ";
-        cin.ignore();
         getline(cin, tiketBaru.namaPengunjung);
 
         // 2. Pilih Wahana
@@ -91,7 +90,7 @@ int main() {
         tiketBaru.idTiket = generateID();
         daftarTiket.push_back(tiketBaru);
 
-        // 4. Output Struk (Bukti EWE)
+        // 4. Output Struk (Bukti AWM)
         cout << "\nProcessing..." << endl;
         system("cls || clear"); // Clear screen lagi biar bersih pas cetak tiket
         
@@ -112,7 +111,7 @@ int main() {
         }
         cout << "TOTAL BAYAR   : Rp " << totalBayar << endl;
         garis();
-        cout << "  Terima kasih telah menggunakan sistem EWE!" << endl;
+        cout << "  Terima kasih telah menggunakan sistem AWM!" << endl;
         garis();
 
         cout << "\nBeli tiket lagi? (y/n): ";

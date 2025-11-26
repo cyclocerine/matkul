@@ -8,8 +8,8 @@ INSERT INTO `accounts_user` VALUES
 INSERT INTO `auth_permission` VALUES 
 (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add content type',4,'add_contenttype'),(14,'Can change content type',4,'change_contenttype'),(15,'Can delete content type',4,'delete_contenttype'),(16,'Can view content type',4,'view_contenttype'),(17,'Can add session',5,'add_session'),(18,'Can change session',5,'change_session'),(19,'Can delete session',5,'delete_session'),(20,'Can view session',5,'view_session'),(21,'Can add doctor',6,'add_doctor'),(22,'Can change doctor',6,'change_doctor'),(23,'Can delete doctor',6,'delete_doctor'),(24,'Can view doctor',6,'view_doctor'),(25,'Can add medicine',7,'add_medicine'),(26,'Can change medicine',7,'change_medicine'),(27,'Can delete medicine',7,'delete_medicine'),(28,'Can view medicine',7,'view_medicine'),(29,'Can add patient',8,'add_patient'),(30,'Can change patient',8,'change_patient'),(31,'Can delete patient',8,'delete_patient'),(32,'Can view patient',8,'view_patient'),(33,'Can add payment',9,'add_payment'),(34,'Can change payment',9,'change_payment'),(35,'Can delete payment',9,'delete_payment'),(36,'Can view payment',9,'view_payment'),(37,'Can add room',10,'add_room'),(38,'Can change room',10,'change_room'),(39,'Can delete room',10,'delete_room'),(40,'Can view room',10,'view_room'),(41,'Can add supplier',11,'add_supplier'),(42,'Can change supplier',11,'change_supplier'),(43,'Can delete supplier',11,'delete_supplier'),(44,'Can view supplier',11,'view_supplier'),(45,'Can add medical record',12,'add_medicalrecord'),(46,'Can change medical record',12,'change_medicalrecord'),(47,'Can delete medical record',12,'delete_medicalrecord'),(48,'Can view medical record',12,'view_medicalrecord'),(49,'Can add medical transaction',13,'add_medicaltransaction'),(50,'Can change medical transaction',13,'change_medicaltransaction'),(51,'Can delete medical transaction',13,'delete_medicaltransaction'),(52,'Can view medical transaction',13,'view_medicaltransaction'),(53,'Can add prescription',14,'add_prescription'),(54,'Can change prescription',14,'change_prescription'),(55,'Can delete prescription',14,'delete_prescription'),(56,'Can view prescription',14,'view_prescription'),(57,'Can add inpatient',15,'add_inpatient'),(58,'Can change inpatient',15,'change_inpatient'),(59,'Can delete inpatient',15,'delete_inpatient'),(60,'Can view inpatient',15,'view_inpatient'),(61,'Can add schedule',16,'add_schedule'),(62,'Can change schedule',16,'change_schedule'),(63,'Can delete schedule',16,'delete_schedule'),(64,'Can view schedule',16,'view_schedule'),(65,'Can add doctor leave',17,'add_doctorleave'),(66,'Can change doctor leave',17,'change_doctorleave'),(67,'Can delete doctor leave',17,'delete_doctorleave'),(68,'Can view doctor leave',17,'view_doctorleave'),(69,'Can add doctor availability',18,'add_doctoravailability'),(70,'Can change doctor availability',18,'change_doctoravailability'),(71,'Can delete doctor availability',18,'delete_doctoravailability'),(72,'Can view doctor availability',18,'view_doctoravailability'),(73,'Can add user',19,'add_user'),(74,'Can change user',19,'change_user'),(75,'Can delete user',19,'delete_user'),(76,'Can view user',19,'view_user');
 
--- 3. DATA DOKTER (core_doctor) - [Gender distandarisasi]
-INSERT INTO `core_doctor` VALUES 
+-- 3. DATA DOKTER (doctor) - [Gender distandarisasi]
+INSERT INTO `doctor` VALUES 
 (1,'dr. Kaka Ubed, Sp.Jp','kaka@usya.com','082338423023','12345678910','','2006-11-19','Laki-laki','Jantung','Spesialis','IGD',0.00,1,'17:00:00.000000','08:00:00.000000'),
 (2,'dr. Andi Prasetyo, Sp.PD','andi.prasetyo@rssehat.id','081234567890','30240145','202310001','1981-03-22','Laki-laki','Penyakit Dalam','Dokter Spesialis','Poli Penyakit Dalam',18000000.00,1,'16:00:00.000000','08:00:00.000000'),
 (3,'dr. Siti Maemunah, Sp.A','siti.maemunah@rssehat.id','081278900122','30240256','202310002','1985-07-11','Perempuan','Anak','Dokter Spesialis','Poli Anak',17500000.00,1,'16:00:00.000000','08:00:00.000000'),
@@ -22,8 +22,8 @@ INSERT INTO `core_doctor` VALUES
 (10,'dr. Fajar Nugroho, Sp.KK','fajar.nugroho@rssehat.id','081366778899','30240943','202310009','1986-11-25','Laki-laki','Kulit & Kelamin','Dokter Spesialis','Poli Kulit & Kelamin',17000000.00,1,'16:00:00.000000','08:00:00.000000'),
 (11,'dr. Wulan Sari, Sp.OG','wulan.sari@rssehat.id','081255443322','30241054','202310010','1984-02-14','Perempuan','Kandungan & Kebidanan','Dokter Spesialis','Poli Kebidanan',19000000.00,1,'16:00:00.000000','08:00:00.000000');
 
--- 4. DATA PASIEN (core_patient) - [Gender & BPJS distandarisasi]
-INSERT INTO `core_patient` VALUES 
+-- 4. DATA PASIEN (patient) - [Gender & BPJS distandarisasi]
+INSERT INTO `patient` VALUES 
 (1,'ulil ganteng','seturan','088888888888','2008-12-01','Laki-laki','A+','Aktif','2025-11-19 06:09:05.151464','2025-11-19 06:09:05.151464'),
 (2,'Andi Pratama','Jl. Merpati Indah No. 12, Kel. Cilandak Barat, Kec. Cilandak, Jakarta Selatan','81234567890','1990-03-12','Laki-laki','B+','Aktif','2025-11-19 06:38:16.000000','2025-11-19 06:51:49.761010'),
 (3,'Siti Rahmawati','Jl. Melati Putih No. 8, Kel. Antapani, Kec. Antapani, Bandung','081356789012','1988-07-25','Perempuan','AB+','Non-Aktif','2025-11-19 06:38:16.000000','2025-11-19 06:51:14.641100'),
@@ -36,8 +36,8 @@ INSERT INTO `core_patient` VALUES
 (10,'Fajar Khopling','Jl. Melur Indah No. 18, Kel. Tanah Sareal, Kec. Tanah Sareal, Bogor','081266778899','1999-10-15','Laki-laki','A+','Non-Aktif','2025-11-19 06:38:16.000000','2025-11-19 06:47:10.898857'),
 (11,'Dwi Setiawan','Jl. Anggrek Raya No. 3, Kel. Pedurungan, Kec. Pedurungan, Semarang','081644556677','1987-09-09','Laki-laki','O+','Non-Aktif','2025-11-19 06:38:16.000000','2025-11-19 06:46:41.058679');
 
--- 5. DATA REKAM MEDIS (core_medicalrecord) - [Status bahasa distandarisasi]
-INSERT INTO `core_medicalrecord` VALUES 
+-- 5. DATA REKAM MEDIS (medicalrecord) - [Status bahasa distandarisasi]
+INSERT INTO `medicalrecord` VALUES 
 (1,'2025-11-19','Hipertensi','Diberikan Amlodipine 10 mg sekali sehari dan dianjurkan diet rendah garam',1,2,'2025-11-19 06:54:29.000000','06:54:29.000000','-','Selesai','2025-11-19 06:54:29.000000','Disetujui',NULL),
 (2,'2025-11-19','Diabetes Mellitus Tipe 2','Diberikan Metformin 500 mg dua kali sehari dan kontrol gula darah rutin',1,3,'2025-11-19 06:54:29.000000','06:54:29.000000','-','Selesai','2025-11-19 06:54:29.000000','Disetujui',NULL),
 (3,'2025-11-19','Infeksi Saluran Pernafasan Akut (ISPA)','Diberikan Amoxicillin 500 mg tiga kali sehari selama 5 hari',8,4,'2025-11-19 06:54:29.000000','06:54:29.000000','-','Selesai','2025-11-19 06:54:29.000000','Disetujui',NULL),
@@ -50,8 +50,8 @@ INSERT INTO `core_medicalrecord` VALUES
 (10,'2025-11-19','Alergi Kulit (Dermatitis)','Diberikan Cetirizine 10 mg malam hari dan salep hidrokortison',9,10,'2025-11-19 06:54:29.000000','06:54:29.000000','-','Selesai','2025-11-19 06:54:29.000000','Disetujui',NULL),
 (11,'2025-11-20','Jantung Koroner','Bedah jantung atas bawah',1,1,'2025-11-19 07:39:45.791400','14:42:37.000000','','Selesai','2025-11-19 07:43:07.933122','Disetujui','');
 
--- 6. DATA TRANSAKSI MEDIS (core_medicaltransaction)
-INSERT INTO `core_medicaltransaction` VALUES 
+-- 6. DATA TRANSAKSI MEDIS (medicaltransaction)
+INSERT INTO `medicaltransaction` VALUES 
 (1,'Diagnosis: DBD Biaya Pengobatan: 1500000 Biaya Rawat Inap: 2000000',3500000.00,5,1),
 (2,'Diagnosis: Diabetes Mellitus Tipe2 Biaya Pengobatan: 1200000 Biaya Rawat Inap: 7000000',8200000.00,2,2),
 (3,'Diagnosis: ISPA Biaya Pengobatan: 15000000 Biaya Rawat Inap: 21000000',36000000.00,3,3),
@@ -63,8 +63,8 @@ INSERT INTO `core_medicaltransaction` VALUES
 (9,'Diagnosis: Alergi Kulit (Dermatitis) Biaya Pengobatan: 2500000 Biaya Rawat Inap: 30000000',32500000.00,10,9),
 (10,'Diagnosis: Hipertensi Biaya Pengobatan: 1500000 Biaya Rawat Inap: 7500000',9000000.00,1,10);
 
--- 7. DATA OBAT (core_medicine) - [Tanggal 0000-00-00 diperbaiki]
-INSERT INTO `core_medicine` VALUES 
+-- 7. DATA OBAT (medicine) - [Tanggal 0000-00-00 diperbaiki]
+INSERT INTO `medicine` VALUES 
 (16,'Paracetamol 500mg','Bebas','Tablet','2026-05-01',250,3000.00,3001),
 (17,'Amoxicillin 500mg','Keras','Kapsul','2026-08-15',200,5000.00,3002),
 (18,'Cefadroxil 500mg','Keras','Kapsul','2026-10-30',150,7000.00,3002),
@@ -81,8 +81,8 @@ INSERT INTO `core_medicine` VALUES
 (29,'Meloxicam 7.5 mg','Keras','Tablet','2030-12-31',2500,1000.00,3004),
 (30,'Cetirizine 10 mg','Keras','Tablet','2030-12-31',4500,500.00,3002);
 
--- 8. DATA PEMBAYARAN (core_payment)
-INSERT INTO `core_payment` VALUES 
+-- 8. DATA PEMBAYARAN (payment)
+INSERT INTO `payment` VALUES 
 (1,'2025-01-15 00:00:00.000000','Tunai',3500000.00,'2025-11-19 07:23:44.000000',NULL,'INV/2025/01/001',5,'Lunas',3500000.00,NULL,'Rawat Inap & Pengobatan','Lunas','2025-11-19 07:23:44.000000'),
 (2,'2025-02-02 00:00:00.000000','Debit',8200000.00,'2025-11-19 07:23:44.000000',NULL,'INV/2025/02/002',2,'Lunas',8200000.00,NULL,'Rawat Inap & Pengobatan','Lunas','2025-11-19 07:23:44.000000'),
 (3,'2025-02-10 00:00:00.000000','QRIS',36000000.00,'2025-11-19 07:23:44.000000',NULL,'INV/2025/02/003',3,'Lunas',36000000.00,NULL,'Rawat Inap & Pengobatan','Lunas','2025-11-19 07:23:44.000000'),
@@ -94,8 +94,8 @@ INSERT INTO `core_payment` VALUES
 (9,'2025-07-18 00:00:00.000000','BPJS',32500000.00,'2025-11-19 07:23:44.000000',NULL,'INV/2025/07/009',10,'Klaim BPJS',32500000.00,NULL,'Rawat Inap & Pengobatan','Lunas','2025-11-19 07:23:44.000000'),
 (10,'2025-08-22 00:00:00.000000','Transfer Bank',9000000.00,'2025-11-19 07:23:44.000000',NULL,'INV/2025/08/010',1,'Lunas',9000000.00,NULL,'Rawat Inap & Pengobatan','Lunas','2025-11-19 07:23:44.000000');
 
--- 9. DATA RESEP (core_prescription)
-INSERT INTO `core_prescription` VALUES 
+-- 9. DATA RESEP (prescription)
+INSERT INTO `prescription` VALUES 
 (11,'2025-01-15','1x sehari sesudah makan','Amlodipine 10 mg, diminum 1x sehari setelah makan',1,26),
 (12,'2025-02-02','2x sehari sesudah makan','Metformin 500 mg, diminum 2x sehari sesudah makan',2,22),
 (13,'2025-02-10','3x sehari selama 5 hari','Amoxicillin 500 mg, diminum 3x sehari selama 5 hari',3,17),
@@ -107,16 +107,16 @@ INSERT INTO `core_prescription` VALUES
 (19,'2025-07-18','1x sehari','Meloxicam 7.5 mg, diminum 1x sehari, lakukan fisioterapi',9,29),
 (20,'2025-08-22','1x malam hari','Cetirizine 10 mg malam hari + salep hidrokortison tipis-tipis',10,30);
 
--- 10. DATA KAMAR (core_room)
-INSERT INTO `core_room` VALUES 
+-- 10. DATA KAMAR (room)
+INSERT INTO `room` VALUES 
 (1,'Pattimura 1  - 3A','VIP',1,1.00),(2,'Pattimura 1  - 3B','VIP',1,1.00),(3,'Pattimura 1  - 3C','VIP',1,1.00),(4,'Pattimura 1  - 3D','VIP',1,1.00),(5,'Pattimura 2 -  3A','ICU',1,1.00),(6,'Pattimura 2 -  3B','ICU',1,1.00),(7,'Pattimura 2 -  3C','ICU',1,1.00),(8,'Pattimura 2  - 3D','ICU',1,1.00),(9,'Pattimura 3  - 3A','Kelas 1',2,5.00),(10,'Pattimura 3  - 3B','Kelas 1',2,5.00),(11,'Pattimura 3  - 3C','Kelas 1',2,5.00),(12,'Pattimura 3  - 3C','Kelas 1',2,5.00);
 
--- 11. DATA JADWAL (core_schedule)
-INSERT INTO `core_schedule` VALUES 
+-- 11. DATA JADWAL (schedule)
+INSERT INTO `schedule` VALUES 
 (1,'2025-01-15','08:30:00.000000',2,'2025-11-19 07:32:38.000000','Terjadwal'),(2,'2025-02-02','09:15:00.000000',3,'2025-11-19 07:32:38.000000','Terjadwal'),(3,'2025-02-10','10:45:00.000000',4,'2025-11-19 07:32:38.000000','Terjadwal'),(4,'2025-03-08','11:20:00.000000',5,'2025-11-19 07:32:38.000000','Terjadwal'),(5,'2025-03-21','13:00:00.000000',6,'2025-11-19 07:32:38.000000','Terjadwal'),(6,'2025-04-05','14:10:00.000000',7,'2025-11-19 07:32:38.000000','Terjadwal'),(7,'2025-05-11','15:30:00.000000',8,'2025-11-19 07:32:38.000000','Terjadwal'),(8,'2025-06-07','08:00:00.000000',6,'2025-11-19 07:32:38.000000','Terjadwal'),(9,'2025-07-18','10:00:00.000000',10,'2025-11-19 07:32:38.000000','Terjadwal'),(10,'2025-08-22','16:15:00.000000',9,'2025-11-19 07:32:38.000000','Terjadwal');
 
--- 12. DATA SUPPLIER (core_supplier)
-INSERT INTO `core_supplier` VALUES 
+-- 12. DATA SUPPLIER (supplier)
+INSERT INTO `supplier` VALUES 
 (3001,'PT Sehat Selalu Farma','Jl. Sudirman No. 88, Jakarta','021-5556677','info@sehatselalu.co.id'),
 (3002,'CV Medika Utama','Jl. Gatot Subroto No. 22, Bandung','022-6667788','cs@medikautama.com'),
 (3003,'UD Obat Rakyat','Jl. Pemuda No. 45, Surabaya','031-4445599','udobatrakyat@gmail.com'),
