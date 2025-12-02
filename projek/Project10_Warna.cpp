@@ -43,7 +43,7 @@ int main() {
     
     // 4. Tampilkan Menu Harmoni
     cout << "Perpaduan Warna Harmonis" << endl;
-    cout << "a. Perpaduan Warna Analogous" << endl;
+    cout << "a. Perpaduan Warna AcariWarnaSebelahan" << endl;
     cout << "b. Perpaduan Warna Complementary" << endl;
     cout << "c. Perpaduan Warna Split Complementary" << endl;
     cout << "d. Perpaduan Warna Triadic Complementary" << endl;
@@ -132,7 +132,7 @@ void cariWarnaSebelahan(int kodeInternal) {
     int kanan_internal = (kodeInternal + 1) % 12;
     
     // Output diubah sesuai gambar (tampilkan kode 1-12)
-    cout << "Perpaduan Warna Analogous dengan warna nomor :" << endl;
+    cout << "Perpaduan Warna AcariWarnaSebelahan dengan warna nomor :" << endl;
     cout << (kiri_internal + 1) << ", " << (kanan_internal + 1) << endl;
 }
 
