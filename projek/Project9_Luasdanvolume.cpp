@@ -71,8 +71,9 @@ int main(){
                     }
                     case 4: {
                         float alas, tinggi;
-                        cout << "Masukkan alas dan tinggi segitiga: ";
-                        cin >> alas >> tinggi;
+                        cout << "Masukkan alas segitiga: ";
+                        cin >> alas;
+                        cout << "\nMasukan Tinggi segitiga ";cin >> tinggi;
                         cout << "Luas Segitiga: " << luasSegitiga(alas, tinggi) << endl;
                         break;
                     }

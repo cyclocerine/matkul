@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     string nomor;
-    int nominal, pulsa, pilihan;
+    int nominal, pilihan;
     cout << "Masukkan nomor telepon: ";
     cin >> nomor;
     system("clear || cls");
@@ -46,4 +46,6 @@ int main(){
         default:
             cout << "Pilihan tidak valid!" << endl;
             return 1;
+
+        }
 }
