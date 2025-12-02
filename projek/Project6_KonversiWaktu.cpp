@@ -3,9 +3,9 @@ using namespace std;
 
 void konversiWaktu(int totalDetik) {
     int jam = totalDetik  / 3600;
-    int sisaDetikSetelahJam = totalDetik % 3600;
-    int menit = sisaDetikSetelahJam / 60;
-    int detik = sisaDetikSetelahJam  % 60;
+    int sisaDetik = totalDetik % 3600;
+    int menit = sisaDetik / 60;
+    int detik = sisaDetik  % 60;
 
     cout << "Hasil Konversi: " << jam << " jam, " << menit << " menit, " << detik << " detik" << endl;
 }
