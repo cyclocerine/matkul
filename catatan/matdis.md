@@ -82,6 +82,10 @@ Langkah-langkah pembentukan berdasarkan algoritma Huffman:
 
 
 Karakter dengan frekuensi tinggi seperti 'a' akan terletak lebih dekat ke akar pohon (mendapat kode bit pendek), sedangkan karakter berfrekuensi rendah akan berada di bagian bawah (mendapat kode bit panjang).
+$$
+\sum \text{frekuensi} \times \text{panjang bit}
+$$
+
 
 **Visualisasi Pohon Huffman:**
 
