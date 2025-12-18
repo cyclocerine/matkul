@@ -89,7 +89,7 @@ Karakter dengan frekuensi tinggi seperti 'a' akan terletak lebih dekat ke akar p
 
 ### (b) Estimasi Jumlah Bit
 
-Jumlah total bit dihitung dengan menjumlahkan hasil kali antara frekuensi karakter dengan panjang lintasannya di pohon (\sum \text{frekuensi} \times \text{panjang bit}).
+Jumlah total bit dihitung dengan menjumlahkan hasil kali antara frekuensi karakter dengan panjang lintasannya di pohon $\sum \text{frekuensi} \times \text{panjang bit}$.
 
 * Dibandingkan dengan pengkodean standar 8-bit (ASCII) yang memerlukan 216 bit (27 × 8 = 216), penggunaan Huffman menghasilkan **95 bit**.
 
