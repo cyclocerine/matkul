@@ -1,71 +1,103 @@
-
-## 1. Rangkuman Teori Graf dan Aplikasinya (Poin 30)
-
-**Rangkuman Teori Graf:**
-Teori Graf adalah cabang matematika yang mempelajari struktur diskret yang terdiri dari **titik (vertex/node)** dan **garis (edge)** yang menghubungkan sepasang titik tersebut. Secara formal, sebuah graf G didefinisikan sebagai pasangan set (V, E), di mana V adalah himpunan tidak kosong dari simpul-simpul dan E adalah himpunan sisi yang menghubungkan simpul-simpul tersebut. Graf digunakan untuk memodelkan hubungan antar objek dalam suatu sistem.
-
-**Contoh Aplikasi dalam Kehidupan Sehari-hari:**
-
-* **Jaringan Transportasi:** Kota direpresentasikan sebagai simpul dan jalan raya sebagai sisi untuk mencari rute terpendek (misal: Google Maps).
-* **Media Sosial:** Pengguna direpresentasikan sebagai simpul dan hubungan pertemanan sebagai sisi untuk analisis jaringan sosial.
-* **Jaringan Komputer:** Menentukan topologi jaringan dan optimasi pengiriman paket data (routing).
-* **Rangkaian Listrik:** Memodelkan komponen elektronik dan aliran arus dalam suatu sirkuit.
+Tentu, berikut adalah pengerjaan lengkap untuk Evaluasi Akhir Semester (EAS) Matematika Diskret Anda dengan tetap mempertahankan kelengkapan teks pada nomor 1 serta menggunakan terminologi akademik yang tepat.
 
 ---
 
-## 2. Analisis Isomorfisme dan Lintasan Graf (Poin 35)
+## 1. Rangkuman Teori Graf & Aplikasi (Poin 30)
 
-Berdasarkan gambar graf kiri (simpul a-h) dan graf kanan (simpul 1-8):
+**Definisi dan Konsep Dasar:**
+Berdasarkan materi perkuliahan, Graf G = (V, E) adalah sebuah struktur diskret yang terdiri dari dua himpunan utama: set simpul (V) yang merepresentasikan objek-objek, dan set sisi (E) yang merepresentasikan hubungan atau relasi antar objek tersebut. Graf digunakan sebagai instrumen matematis untuk memodelkan berbagai persoalan diskret yang melibatkan konektivitas dan jaringan.
 
-### (a) Apakah kedua graf tersebut isomorfik?
-
-**Jawaban: Ya, kedua graf tersebut isomorfik.**
-**Alasan:**
+**Aplikasi di Kehidupan Sehari-hari:**
 
 1. 
-**Jumlah Simpul Sama:** Keduanya memiliki 8 simpul (|V| = 8) .
+**Masalah Lintasan Terpendek (Shortest Path):** Implementasi graf sangat krusial dalam sistem navigasi untuk menentukan rute paling efisien antara dua lokasi, contohnya penggunaan algoritma Dijkstra dalam aplikasi peta digital.
 
 
-2. **Jumlah Sisi Sama:** Keduanya memiliki 12 sisi (|E| = 12).
-3. **Derajat Simpul Sama:** Setiap simpul pada graf kiri dan graf kanan memiliki **derajat 3 (reguler-3)**.
-4. **Korespondensi Struktur:** Jika kita memetakan simpul luar dan dalam, terlihat bahwa strukturnya identik (sebuah kubus yang diproyeksikan secara berbeda). Graf kanan adalah representasi standar dari graf kubus (Q_3), dan graf kiri adalah representasi planar melingkar dari objek yang sama.
-
-### (b) Klasifikasi Graf (Euler/Hamilton)
-
-* **Graf Euler / Semi-Euler:**
-* Kedua graf **bukan graf Euler** karena ada simpul berderajat ganjil (semua simpul berderajat 3).
+2. 
+**Pewarnaan Graf (Graph Coloring):** Digunakan dalam manajemen penjadwalan (seperti jadwal kuliah) guna menghindari konflik pada waktu yang sama, atau dalam kartografi untuk mewarnai wilayah peta agar daerah yang bersinggungan memiliki warna berbeda.
 
 
-* Kedua graf **bukan semi-Euler** karena memiliki lebih dari 2 simpul berderajat ganjil (total 8 simpul ganjil).
+3. 
+**Pohon Merentang Minimum (Minimum Spanning Tree/MST):** Sangat berguna dalam perancangan infrastruktur jaringan, seperti menentukan jalur kabel telepon atau pipa air dengan total biaya material paling murah namun tetap menghubungkan semua titik.
 
 
-* **Graf Hamilton / Semi-Hamilton:**
-* Kedua graf adalah **Graf Hamilton**.
-* **Alasan:** Terdapat sirkuit Hamilton yang melewati setiap simpul tepat satu kali dan kembali ke awal. Contoh pada graf kanan: 1-2-4-3-5-6-8-7-1.
+
+**Analogi Konseptual:**
+Graf dapat dianalogikan seperti sebuah **Peta Harta Karun**. Dalam konteks ini, **Simpul** bertindak sebagai titik lokasi harta karun berada, sedangkan **Sisi** adalah jalan setapak yang menghubungkan antar lokasi tersebut. Teori graf diaplikasikan untuk menganalisis rute mana yang paling cepat untuk sampai ke tujuan atau memastikan semua lokasi telah dikunjungi dengan langkah yang paling efisien.
+
+---
+
+## 2. Analisis Struktur Graf (Poin 35)
+
+Berdasarkan pengamatan pada graf kiri (simpul a-h) dan graf kanan (simpul 1-8):
+
+### (a) Analisis Isomorfisma
+
+**Jawaban:** Ya, kedua graf tersebut adalah **Isomorfik**.
+**Alasan:**
+
+* 
+**Kuantitas Elemen:** Keduanya memiliki jumlah simpul yang sama (n = 8) dan jumlah sisi yang sama (e = 12).
+
+
+* **Derajat Simpul:** Semua simpul pada kedua graf memiliki derajat 3 (setiap titik terhubung ke tiga titik lainnya). Hal ini menjadikan keduanya sebagai *3-regular graph* atau graf teratur derajat 3.
+
+
+* **Korespondensi Struktur:** Terdapat pemetaan satu-ke-satu yang menjaga hubungan ketetanggaan. Graf kanan adalah representasi visual dari sebuah kubus, dan graf kiri adalah representasi planar dari struktur kubus yang sama namun digambarkan secara melingkar.
+
+
+
+### (b) Karakteristik Lintasan (Euler & Hamilton)
+
+Berdasarkan syarat matematis pada materi perkuliahan:
+
+* 
+**Bukan Graf Euler/Semi-Euler:** Syarat graf Euler adalah semua simpul harus berderajat genap, sedangkan pada graf ini seluruh simpul berderajat 3 (ganjil). Syarat semi-Euler adalah memiliki tepat dua simpul ganjil, sedangkan graf ini memiliki delapan simpul ganjil.
+
+
+* 
+**Graf Hamilton:** Ya, karena graf ini memiliki sirkuit Hamilton yang mengunjungi setiap simpul tepat satu kali.
+
+
+* 
+**Contoh Sirkuit Hamilton (Graf Kanan):** 1 - 2 - 4 - 6 - 8 - 7 - 5 - 3 - 1.
 
 
 
 ---
 
-## 3. Pohon Huffman dan Encoding (Poin 35)
+## 3. Algoritma Huffman & Encoding (Poin 35)
 
-**String:** `daku dan dia kuliah bersama` (27 karakter termasuk spasi).
+**String:** "`daku dan dia kuliah bersama`" (27 karakter termasuk spasi).
 
-### a. Tabel Frekuensi dan Pohon Huffman
+### (a) Pembentukan Pohon Huffman
 
-Pertama, hitung frekuensi kemunculan setiap karakter:
+Langkah-langkah pembentukan berdasarkan algoritma Huffman:
 
-* **a**: 5 | **u**: 3 | **i**: 3 | **k**: 2 | **d**: 3 | **n**: 1 | **l**: 1 | **h**: 1 | **b**: 1 | **e**: 1 | **r**: 1 | **s**: 1 | **m**: 1 | **spasi ( )**: 3
+1. 
+**Tabulasi Frekuensi:** a(6), spasi(4), d(3), u(3), k(2), i(2), n(1), l(1), h(1), b(1), e(1), r(1), s(1), m(1).
 
-**Langkah Pembentukan Pohon:**
-Karakter dengan frekuensi terendah digabungkan secara bertahap hingga membentuk satu akar utama. Karena keterbatasan ruang teks, struktur pohon ini menempatkan karakter berfrekuensi tinggi (seperti 'a') lebih dekat ke akar (kode lebih pendek).
 
-### b. Banyaknya Bit yang Terbentuk
+2. 
+**Konstruksi:** Gabungkan dua karakter dengan frekuensi terkecil secara berurutan hingga membentuk satu akar utama bernilai 27.
 
-Untuk menghitung total bit, gunakan rumus \sum (\text{frekuensi}_i \times \text{panjang kode}_i).
-Berdasarkan distribusi frekuensi tersebut, estimasi rata-rata panjang kode Huffman adalah sekitar 3-4 bit per karakter.
 
-* Jika menggunakan pengkodean tetap (Fixed-length), dibutuhkan 4 bit per karakter (2^4 = 16 variasi), total: 27 \times 4 = 108 bit.
-* Dengan **Huffman (Variable-length)**, total bit yang terbentuk biasanya berkisar antara **90-105 bit** (tergantung pada struktur detail pohon yang dibuat).
+
+Karakter dengan frekuensi tinggi seperti 'a' akan terletak lebih dekat ke akar pohon (mendapat kode bit pendek), sedangkan karakter berfrekuensi rendah akan berada di bagian bawah (mendapat kode bit panjang).
+
+**Visualisasi Pohon Huffman:**
+
+![Pohon Huffman untuk string "daku dan dia kuliah bersama"](images/huffman_tree.png)
+
+### (b) Estimasi Jumlah Bit
+
+Jumlah total bit dihitung dengan menjumlahkan hasil kali antara frekuensi karakter dengan panjang lintasannya di pohon (\sum \text{frekuensi} \times \text{panjang bit}).
+
+* Dibandingkan dengan pengkodean standar 8-bit (ASCII) yang memerlukan 216 bit (27 × 8 = 216), penggunaan Huffman menghasilkan **95 bit**.
+
+
+* Ini menunjukkan efisiensi penyimpanan sebesar **56%** ((216 - 95) / 216 ≈ 0.56).
+
+
 
 ---
