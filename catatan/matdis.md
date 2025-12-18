@@ -1,6 +1,4 @@
-Tentu, berikut adalah pengerjaan lengkap untuk Evaluasi Akhir Semester (EAS) Matematika Diskret Anda dengan tetap mempertahankan kelengkapan teks pada nomor 1 serta menggunakan terminologi akademik yang tepat.
 
----
 
 ## 1. Rangkuman Teori Graf & Aplikasi (Poin 30)
 
