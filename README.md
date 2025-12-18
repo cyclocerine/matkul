@@ -1,4 +1,4 @@
-# C++ Matkul Repository
+# Matkul Repository
 
 Repository ini berisi kumpulan kode program untuk mata kuliah pemrograman, termasuk praktikum, proyek, dan eksperimen.
 
