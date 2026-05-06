@@ -3,5 +3,7 @@
 *.exe
 *.a
 .vscode/
-/build/
-/bin/
+.idea/
+*.swp
+*.swo
+*~
